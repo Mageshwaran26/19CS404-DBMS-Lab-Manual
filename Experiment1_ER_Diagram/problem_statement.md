@@ -46,130 +46,91 @@ Design a database for patient management, appointments, medical records, and bil
    - How you modeled prerequisites or billing.
 
 # ER Diagram Submission - Student Name
+**Name : mohamed asil s**
 
-## Scenario Chosen:
-Hospital Database
+**Reg No : 212223040112**
+
+**Scenario Chosen:**
+
+University
 
 ## ER Diagram:
-![image (2)](https://github.com/user-attachments/assets/5586b2fd-e508-45c8-9072-0fe278afdccf)
+![image](https://github.com/user-attachments/assets/f19ca1fb-376f-49d6-8440-5f07eb001c2f)
 
 ## Entities and Attributes:
- Student
- 1. StudentID (Primary Key)
- 2. FirstName
- 3. LastName
- 4. DateOfBirth
- 5. Email
- 6. PhoneNumber
- 7. EnrollmentDate
- 8. DepartmentID (Foreign Key)
- Faculty
- 1. FacultyID (Primary Key)
- 2. FirstName
- 3. LastName
- 4. Email
- 5. PhoneNumber
- 6. HireDate
- 7. DepartmentID (Foreign Key)
- Department
- 1. DepartmentID(Primary Key)
- 2. DepartmentName
- 3. Location
- Course
- 1. CourseID (Primary Key)
- 2. CourseName
- 3. CourseCode
- 4. Credits
- 5. DepartmentID (Foreign Key)
- Enrollment
- 1. EnrollmentID (Primary Key)
- 2. StudentID (Foreign Key)
- 3. CourseID (Foreign Key)
- 4. EnrollmentDate
- 5. Grade
-Class
- 1. ClassID (Primary Key)
- 2. CourseID (Foreign Key)
- 3. FacultyID (Foreign Key)
- 4. Semester
- 5. Year
- 6. Schedule
- Advising
- 1. AdvisingID (Primary Key)
- 2. StudentID (Foreign Key)
- 3. FacultyID (Foreign Key)
- 4. AdvisingDate
- Prerequisite
- 1.Course name (Foreign Key)
- 2.Course code code (primary Key)
- 3.Year
- 4.Credits
+
+**Student**
+
+Attributes: StudentID, FirstName, LastName, DateOfBirth, Email, PhoneNumber, EnrollmentDate, DepartmentID.
+
+**Faculty**
+
+Attributes: FacultyID, FirstName, LastName, Email, PhoneNumber, HireDate, DepartmentID.
+
+**Department**
+
+Attributes: DepartmentID, DepartmentName, Location.
+
+**Course**
+
+Attributes: CourseID, CourseName, CourseCode, Credits, DepartmentID.
+
+**Enrollment**
+
+Attributes: EnrollmentID, StudentID, CourseID, EnrollmentDate, Grade.
+
+**Class**
+
+Attributes: ClassID, CourseID, FacultyID, Semester, Year, Schedule.
+
+**Advising**
+
+Attributes: AdvisingID, StudentID, FacultyID, AdvisingDate.
 
 ## Relationships and Constraints:
- Student- Department
- 1. "Belongs to" Relationship
- 2. Astudent belongs to one department.
- 3. Adepartment can have multiple students.
- Faculty- Department
- 1. "Belongs to" Relationship
- 2. Afaculty member belongs to one department.
- 3. Adepartment can have multiple faculty members.
- Course- Department
- 1. "Offered by" Relationship
- 2. Acourse isoffered by one department.
- 3. Adepartment can offer multiple courses.
- Enrollment- Student
- 1. "Enrolled in" Relationship
- 2. Astudent can enroll in multiple courses.
- 3. Eachenrollment record is associated with one student.
- Enrollment- Course
- 1. "Includes" Relationship
- 2. Acourse can havemultiple students enrolled.
- 3. Eachenrollment record is associated with one course.
-Class- Course
- 1. "Teaches" Relationship
- 2. Aclass is based on one course.
- 3. Acourse can havemultiple classes.
- Class- Faculty
- 1. "Taughtby" Relationship
- 2. Aclass is taught by one faculty member.
- 3. Afaculty member can teach multiple classes.
- Advising- Student
- 1. "Advises" Relationship
- 2. Afaculty member advises multiple students.
- 3. Eachadvising record is associated with one student.
- Advising- Faculty
- 1. "Provides" Relationship
- 2. Astudent is advised by one faculty member.
- 3. Eachadvising record is associated with one faculty member
-## Extension (Prerequisite):
-The PREREQUISITE entity models the relationship between courses and their required prerequisites. Here's how it's designed:
 
-Entity Name: PREREQUISITE
+**Student–Advising–Faculty:**
 
-Attributes:
+Relationship: Advises Cardinality: Many-to-Many (each student can have multiple advisors, each faculty can advise multiple students) Participation: Total on Advising
 
-Course Code: Refers to the main course.
+**Student–Enrollment–Course**
 
-Prerequisite Code: Refers to the required prerequisite course.
+Relationship: Enrolled in Cardinality: Many-to-Many Participation: Total on Enrollment
 
-Credits: May refer to the credit requirement for the prerequisite.
+**Course–Class–Faculty:**
 
-Year: Could indicate the academic year the prerequisite is tied to.
+Relationship: Teaches Cardinality: Many-to-Many (each course can be taught in multiple classes, each faculty can teach multiple classes)
 
-Relationships:
+**Course–Department:**
 
-"requires" relationship connects the COURSE and PREREQUISITE entities.
+Relationship: Offered by Cardinality: Many-to-One (Each course belongs to one department)
 
-This implies that a course requires the course listed in Prerequisite Code to be completed before enrollment.
+**Student–Department:**
+
+Relationship: Belongs to Cardinality: Many-to-One
+
+**Faculty–Department:**
+
+Relationship: Belongs to Cardinality: Many-to-One
+
+**Class–Course:**
+
+Relationship: Includes Cardinality: Many-to-One
+
+**Enrollment–Class:**
+
+Relationship: Taught by Not standard; assumes indirect mapping via faculty
+
+## Extension (Prerequisite / Billing):
+Prerequisite Modeling:
+Could be modeled with a recursive relationship on Course: Relationship: Requires Cardinality: Many-to-Many (a course can have many prerequisites and be a prerequisite for many others)
+
 ## Design Choices:
-When selecting entities, relationships, and assumptions for a specific task or concept in Unreal Engine, I focus on the following key points:
+Use of separate entities for Advising, Enrollment, and Class helps normalize many-to-many relationships and maintain relational integrity. Department as a central entity provides a logical way to group students, faculty, and courses.
 
-Entities: These are the core components involved in the task. For example, when discussing Physical Material, I chose this entity because it directly relates to defining how objects behave in terms of physics—whether they are bouncy, slippery, or heavy. The material properties like friction and density are fundamental for interaction in a 3D environment.
+Class entity includes scheduling details, separating course content from the time/location of delivery.
 
-Relationships: The relationship between entities is crucial for understanding how they interact with each other. For instance, Physical Material and surfaces/objects have a relationship where the material defines how an object behaves physically when it collides, slides, or interacts with other objects. This relationship helps define real-world-like interactions in a virtual scene.
+The design is modular and supports easy extension for future requirements like prerequisites, billing, or attendance.
 
-Assumptions: Assumptions are used to simplify complex systems or to fill in gaps where more specific details aren't provided. For example, when selecting the impact of a Physical Material, I assumed that users might be looking for how it affects objects' physical interactions in the scene, as this is the primary function in Unreal Engine, which focuses on realistic simulations.
 ## RESULT
-Those the ER DIAGRAM is implemented successfully
-
+Thus, the Entity-Relationship (ER) Diagram have been created successfully.
