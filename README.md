@@ -1,45 +1,46 @@
-# EX.NO-3-RAILWAY-RESERVATION-SYSTEM
+# DBMS Laboratory Manual Submission
 
-# AIM
-To develop the Online Ticket Reservation System using Star UML tool.
+## 🎓 Course: 19CS404 Database Management System and its Applications  
+## 🧑‍🏫 Instructor: Ms. G Abinaya 
 
-# PROBLEM STATEMENT
+![image](https://github.com/user-attachments/assets/7e6f9751-b530-4526-9a3d-8e322e3b2e6d)
 
-1.An E-Ticket (Electronic ticket) is a paperless electronic document used for ticketing passengers, particularly in the commercial airline, railway industries.
+### 📝 Instructions for Students
 
-2.An E-Ticket offers many advantages for both travelers and airline including security, flexibility and cost convenience. At the same time, it also provides the standard assurance of the traditional paper ticket, scaling choice, travel time options and other flexibilities.
+1. Fork this repository to your GitHub profile.
+2. For each experiment:
+   SQL queries based on questions generated randomly from Moodle.
+   - Complete the question on Moodle.
+   - Each experiment folder contains **two Markdown files**
+     1. `README.md`
 
-3.Passengers typically print out copies of their E-Ticket including confirmation E-mail and other document. All those documents can be replaced by pulling them out of the computer again and only a person with proper identification can actually use an E-Ticket.
+        This file contains:
+         - 🎯 **Aim**
+         - 📚 **Theory**
+         - 📝 **Result**
+        
+        You **do not need to edit** this file unless instructed.
+      3. `output.md`
 
-4.E-Ticket passengers can receive everything from gate assignments to cancellation or delay through E-mail, text messages sent to their home or business computers or to their cell phones.
+         You **must update this file** with your answers and outputs.
+         For each of the 10 Moodle-generated questions:
+         - Paste the **question**
+         - Write the **SQL query** inside the code block
+         - Paste a **screenshot or terminal output** below it
+3. Commit and push your changes.
+4. Create a pull request to the original repository
 
-5.Finally, using E-Ticket is a more environmental friendly approach. The main purpose of the online bus ticket system is to provide another way for transnational customers to buy their tickets.
+### ✅ Experiments List
 
-# UML DIAGRAMS:
-
-## USE CASE:
-
-![image](https://github.com/user-attachments/assets/99c5f8a8-bfeb-4c05-afbb-c9fc2a9a5590)
-
-## CLASS DIAGRAM:
-
-![image](https://github.com/user-attachments/assets/3c2fb697-f4a8-426a-8d4f-85dfc7d02a9c)
-
-## SEQUENCE DIAGRAM:
-
-![image](https://github.com/user-attachments/assets/24aad385-67f0-4495-92c9-f100c09a1fcc)
-
-## COMMUNICATION DIAGRAM:
-
-![image](https://github.com/user-attachments/assets/a0503e0e-76cb-48a6-898b-b3687229a4b3)
-
-## ACTIVITY DIAGRAM:
-
-![image](https://github.com/user-attachments/assets/df0a8a9f-0600-4235-8f46-fcee7784d5fe)
-
-## PACKAGE DIAGRAM:
-
-![image](https://github.com/user-attachments/assets/b45fd05e-17e5-43a2-a80b-1e8dc3aaaf5d)
-
-# RESULT:
-Thus the project to develop e-ticketing system was developed using Star UML Software.
+| Exp No | Title                          | Module Based? |
+|--------|--------------------------------|---------------|
+| 1      | ER Diagram                     | No            |
+| 2      | DDL Commands                   | Yes           |
+| 3      | DML Commands                   | Yes           |
+| 4      | Aggregate, GROUP BY, HAVING   | Yes           |
+| 5      | Subqueries and Views          | Yes           |
+| 6      | Joins                         | Yes           |
+| 7      | Pl/sql                        | No            |
+| 8      | Procedures, Functions         | No            |
+| 9      | Cursors, Exception Handling   | No            |
+| 10     | Triggers                      | No            |
