@@ -229,3 +229,4 @@ having sum(workhour) > 40;
 
 ## RESULT
 Thus, the SQL queries to implement aggregate functions, GROUP BY, and HAVING clause have been executed successfully.
+
