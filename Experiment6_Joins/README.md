@@ -374,3 +374,4 @@ where o.purch_amt between 500 and 2000;
 
 ## RESULT
 Thus, the SQL queries to implement different types of joins have been executed successfully.
+
