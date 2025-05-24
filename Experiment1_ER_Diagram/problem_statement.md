@@ -46,9 +46,9 @@ Design a database for patient management, appointments, medical records, and bil
    - How you modeled prerequisites or billing.
 
 # ER Diagram Submission - Student Name
-**Name : mohamed asil s**
+**Name : Mageshwaran T.A**
 
-**Reg No : 212223040112**
+**Reg No : 212224230146**
 
 **Scenario Chosen:**
 
